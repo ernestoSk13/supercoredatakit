@@ -9,9 +9,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>SuperCoreDataDemo.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>9A0467091BEA632200AAB351</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9A0467241BEA632200AAB351</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9A04672F1BEA632200AAB351</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9A55E1D11BE900EA00915CDC</key>
 		<dict>
 			<key>primary</key>

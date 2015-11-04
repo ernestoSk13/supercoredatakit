@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A04670E1BEA632200AAB351 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04670D1BEA632200AAB351 /* main.m */; };
+		9A0467111BEA632200AAB351 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0467101BEA632200AAB351 /* AppDelegate.m */; };
+		9A0467141BEA632200AAB351 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0467131BEA632200AAB351 /* ViewController.m */; };
+		9A0467171BEA632200AAB351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A0467151BEA632200AAB351 /* Main.storyboard */; };
+		9A04671A1BEA632200AAB351 /* SuperCoreDataDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A0467181BEA632200AAB351 /* SuperCoreDataDemo.xcdatamodeld */; };
+		9A04671C1BEA632200AAB351 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A04671B1BEA632200AAB351 /* Assets.xcassets */; };
+		9A04671F1BEA632200AAB351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A04671D1BEA632200AAB351 /* LaunchScreen.storyboard */; };
+		9A04672A1BEA632200AAB351 /* SuperCoreDataDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0467291BEA632200AAB351 /* SuperCoreDataDemoTests.m */; };
+		9A0467351BEA632200AAB351 /* SuperCoreDataDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0467341BEA632200AAB351 /* SuperCoreDataDemoUITests.m */; };
+		9A0467401BEA633C00AAB351 /* SuperCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A55E1D21BE900EA00915CDC /* SuperCoreData.framework */; };
+		9A0467411BEA634200AAB351 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A55E1EC1BE90A3800915CDC /* CoreData.framework */; };
+		9A0467421BEA634200AAB351 /* CoreData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A55E1EC1BE90A3800915CDC /* CoreData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9A04674A1BEA651E00AAB351 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0467481BEA651E00AAB351 /* Employee.m */; };
+		9A04674D1BEA697700AAB351 /* EmployeeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04674C1BEA697700AAB351 /* EmployeeTableViewCell.m */; };
 		9A55E1D61BE900EA00915CDC /* SuperCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A55E1D51BE900EA00915CDC /* SuperCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A55E1DD1BE900EB00915CDC /* SuperCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A55E1D21BE900EA00915CDC /* SuperCoreData.framework */; };
 		9A55E1E21BE900EB00915CDC /* SuperCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A55E1E11BE900EB00915CDC /* SuperCoreDataTests.m */; };
@@ -17,6 +31,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9A0467261BEA632200AAB351 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A55E1C91BE900EA00915CDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A0467091BEA632200AAB351;
+			remoteInfo = SuperCoreDataDemo;
+		};
+		9A0467311BEA632200AAB351 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A55E1C91BE900EA00915CDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A0467091BEA632200AAB351;
+			remoteInfo = SuperCoreDataDemo;
+		};
 		9A55E1DE1BE900EB00915CDC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A55E1C91BE900EA00915CDC /* Project object */;
@@ -26,7 +54,42 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9A0467431BEA634200AAB351 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9A0467421BEA634200AAB351 /* CoreData.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		9A04670A1BEA632200AAB351 /* SuperCoreDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperCoreDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A04670D1BEA632200AAB351 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9A04670F1BEA632200AAB351 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9A0467101BEA632200AAB351 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9A0467121BEA632200AAB351 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9A0467131BEA632200AAB351 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9A0467161BEA632200AAB351 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9A0467191BEA632200AAB351 /* SuperCoreDataDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SuperCoreDataDemo.xcdatamodel; sourceTree = "<group>"; };
+		9A04671B1BEA632200AAB351 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A04671E1BEA632200AAB351 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9A0467201BEA632200AAB351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A0467251BEA632200AAB351 /* SuperCoreDataDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperCoreDataDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0467291BEA632200AAB351 /* SuperCoreDataDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperCoreDataDemoTests.m; sourceTree = "<group>"; };
+		9A04672B1BEA632200AAB351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A0467301BEA632200AAB351 /* SuperCoreDataDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperCoreDataDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0467341BEA632200AAB351 /* SuperCoreDataDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperCoreDataDemoUITests.m; sourceTree = "<group>"; };
+		9A0467361BEA632200AAB351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A0467471BEA651E00AAB351 /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
+		9A0467481BEA651E00AAB351 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
+		9A04674B1BEA697700AAB351 /* EmployeeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeTableViewCell.h; sourceTree = "<group>"; };
+		9A04674C1BEA697700AAB351 /* EmployeeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeTableViewCell.m; sourceTree = "<group>"; };
 		9A55E1D21BE900EA00915CDC /* SuperCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SuperCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A55E1D51BE900EA00915CDC /* SuperCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperCoreData.h; sourceTree = "<group>"; };
 		9A55E1D71BE900EA00915CDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -39,6 +102,29 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9A0467071BEA632200AAB351 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A0467401BEA633C00AAB351 /* SuperCoreData.framework in Frameworks */,
+				9A0467411BEA634200AAB351 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A0467221BEA632200AAB351 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A04672D1BEA632200AAB351 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A55E1CE1BE900EA00915CDC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -58,12 +144,78 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A04670B1BEA632200AAB351 /* SuperCoreDataDemo */ = {
+			isa = PBXGroup;
+			children = (
+				9A0467441BEA64AA00AAB351 /* Models */,
+				9A04670F1BEA632200AAB351 /* AppDelegate.h */,
+				9A0467101BEA632200AAB351 /* AppDelegate.m */,
+				9A0467121BEA632200AAB351 /* ViewController.h */,
+				9A0467131BEA632200AAB351 /* ViewController.m */,
+				9A04674E1BEA697A00AAB351 /* Custom Views */,
+				9A0467151BEA632200AAB351 /* Main.storyboard */,
+				9A04671B1BEA632200AAB351 /* Assets.xcassets */,
+				9A04671D1BEA632200AAB351 /* LaunchScreen.storyboard */,
+				9A0467201BEA632200AAB351 /* Info.plist */,
+				9A0467181BEA632200AAB351 /* SuperCoreDataDemo.xcdatamodeld */,
+				9A04670C1BEA632200AAB351 /* Supporting Files */,
+			);
+			path = SuperCoreDataDemo;
+			sourceTree = "<group>";
+		};
+		9A04670C1BEA632200AAB351 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A04670D1BEA632200AAB351 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9A0467281BEA632200AAB351 /* SuperCoreDataDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A0467291BEA632200AAB351 /* SuperCoreDataDemoTests.m */,
+				9A04672B1BEA632200AAB351 /* Info.plist */,
+			);
+			path = SuperCoreDataDemoTests;
+			sourceTree = "<group>";
+		};
+		9A0467331BEA632200AAB351 /* SuperCoreDataDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9A0467341BEA632200AAB351 /* SuperCoreDataDemoUITests.m */,
+				9A0467361BEA632200AAB351 /* Info.plist */,
+			);
+			path = SuperCoreDataDemoUITests;
+			sourceTree = "<group>";
+		};
+		9A0467441BEA64AA00AAB351 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A0467471BEA651E00AAB351 /* Employee.h */,
+				9A0467481BEA651E00AAB351 /* Employee.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9A04674E1BEA697A00AAB351 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A04674B1BEA697700AAB351 /* EmployeeTableViewCell.h */,
+				9A04674C1BEA697700AAB351 /* EmployeeTableViewCell.m */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
 		9A55E1C81BE900EA00915CDC = {
 			isa = PBXGroup;
 			children = (
 				9A55E1EC1BE90A3800915CDC /* CoreData.framework */,
 				9A55E1D41BE900EA00915CDC /* SuperCoreData */,
 				9A55E1E01BE900EB00915CDC /* SuperCoreDataTests */,
+				9A04670B1BEA632200AAB351 /* SuperCoreDataDemo */,
+				9A0467281BEA632200AAB351 /* SuperCoreDataDemoTests */,
+				9A0467331BEA632200AAB351 /* SuperCoreDataDemoUITests */,
 				9A55E1D31BE900EA00915CDC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +225,9 @@
 			children = (
 				9A55E1D21BE900EA00915CDC /* SuperCoreData.framework */,
 				9A55E1DC1BE900EB00915CDC /* SuperCoreDataTests.xctest */,
+				9A04670A1BEA632200AAB351 /* SuperCoreDataDemo.app */,
+				9A0467251BEA632200AAB351 /* SuperCoreDataDemoTests.xctest */,
+				9A0467301BEA632200AAB351 /* SuperCoreDataDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,6 +268,60 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		9A0467091BEA632200AAB351 /* SuperCoreDataDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A04673D1BEA632200AAB351 /* Build configuration list for PBXNativeTarget "SuperCoreDataDemo" */;
+			buildPhases = (
+				9A0467061BEA632200AAB351 /* Sources */,
+				9A0467071BEA632200AAB351 /* Frameworks */,
+				9A0467081BEA632200AAB351 /* Resources */,
+				9A0467431BEA634200AAB351 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SuperCoreDataDemo;
+			productName = SuperCoreDataDemo;
+			productReference = 9A04670A1BEA632200AAB351 /* SuperCoreDataDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9A0467241BEA632200AAB351 /* SuperCoreDataDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A04673E1BEA632200AAB351 /* Build configuration list for PBXNativeTarget "SuperCoreDataDemoTests" */;
+			buildPhases = (
+				9A0467211BEA632200AAB351 /* Sources */,
+				9A0467221BEA632200AAB351 /* Frameworks */,
+				9A0467231BEA632200AAB351 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A0467271BEA632200AAB351 /* PBXTargetDependency */,
+			);
+			name = SuperCoreDataDemoTests;
+			productName = SuperCoreDataDemoTests;
+			productReference = 9A0467251BEA632200AAB351 /* SuperCoreDataDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9A04672F1BEA632200AAB351 /* SuperCoreDataDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A04673F1BEA632200AAB351 /* Build configuration list for PBXNativeTarget "SuperCoreDataDemoUITests" */;
+			buildPhases = (
+				9A04672C1BEA632200AAB351 /* Sources */,
+				9A04672D1BEA632200AAB351 /* Frameworks */,
+				9A04672E1BEA632200AAB351 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A0467321BEA632200AAB351 /* PBXTargetDependency */,
+			);
+			name = SuperCoreDataDemoUITests;
+			productName = SuperCoreDataDemoUITests;
+			productReference = 9A0467301BEA632200AAB351 /* SuperCoreDataDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		9A55E1D11BE900EA00915CDC /* SuperCoreData */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A55E1E61BE900EB00915CDC /* Build configuration list for PBXNativeTarget "SuperCoreData" */;
@@ -159,6 +368,17 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "ernesto sanchez";
 				TargetAttributes = {
+					9A0467091BEA632200AAB351 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					9A0467241BEA632200AAB351 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 9A0467091BEA632200AAB351;
+					};
+					9A04672F1BEA632200AAB351 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 9A0467091BEA632200AAB351;
+					};
 					9A55E1D11BE900EA00915CDC = {
 						CreatedOnToolsVersion = 7.1;
 					};
@@ -173,6 +393,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 9A55E1C81BE900EA00915CDC;
 			productRefGroup = 9A55E1D31BE900EA00915CDC /* Products */;
@@ -181,11 +402,38 @@
 			targets = (
 				9A55E1D11BE900EA00915CDC /* SuperCoreData */,
 				9A55E1DB1BE900EB00915CDC /* SuperCoreDataTests */,
+				9A0467091BEA632200AAB351 /* SuperCoreDataDemo */,
+				9A0467241BEA632200AAB351 /* SuperCoreDataDemoTests */,
+				9A04672F1BEA632200AAB351 /* SuperCoreDataDemoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9A0467081BEA632200AAB351 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A04671F1BEA632200AAB351 /* LaunchScreen.storyboard in Resources */,
+				9A04671C1BEA632200AAB351 /* Assets.xcassets in Resources */,
+				9A0467171BEA632200AAB351 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A0467231BEA632200AAB351 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A04672E1BEA632200AAB351 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A55E1D01BE900EA00915CDC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,6 +467,35 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9A0467061BEA632200AAB351 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A0467141BEA632200AAB351 /* ViewController.m in Sources */,
+				9A04674D1BEA697700AAB351 /* EmployeeTableViewCell.m in Sources */,
+				9A04671A1BEA632200AAB351 /* SuperCoreDataDemo.xcdatamodeld in Sources */,
+				9A0467111BEA632200AAB351 /* AppDelegate.m in Sources */,
+				9A04674A1BEA651E00AAB351 /* Employee.m in Sources */,
+				9A04670E1BEA632200AAB351 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A0467211BEA632200AAB351 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A04672A1BEA632200AAB351 /* SuperCoreDataDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A04672C1BEA632200AAB351 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A0467351BEA632200AAB351 /* SuperCoreDataDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A55E1CD1BE900EA00915CDC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -238,6 +515,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9A0467271BEA632200AAB351 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A0467091BEA632200AAB351 /* SuperCoreDataDemo */;
+			targetProxy = 9A0467261BEA632200AAB351 /* PBXContainerItemProxy */;
+		};
+		9A0467321BEA632200AAB351 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A0467091BEA632200AAB351 /* SuperCoreDataDemo */;
+			targetProxy = 9A0467311BEA632200AAB351 /* PBXContainerItemProxy */;
+		};
 		9A55E1DF1BE900EB00915CDC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9A55E1D11BE900EA00915CDC /* SuperCoreData */;
@@ -245,7 +532,96 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		9A0467151BEA632200AAB351 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A0467161BEA632200AAB351 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9A04671D1BEA632200AAB351 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A04671E1BEA632200AAB351 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		9A0467371BEA632200AAB351 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SuperCoreDataDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unosquare.SuperCoreDataDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9A0467381BEA632200AAB351 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SuperCoreDataDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unosquare.SuperCoreDataDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9A0467391BEA632200AAB351 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SuperCoreDataDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unosquare.SuperCoreDataDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperCoreDataDemo.app/SuperCoreDataDemo";
+			};
+			name = Debug;
+		};
+		9A04673A1BEA632200AAB351 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SuperCoreDataDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unosquare.SuperCoreDataDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperCoreDataDemo.app/SuperCoreDataDemo";
+			};
+			name = Release;
+		};
+		9A04673B1BEA632200AAB351 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SuperCoreDataDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unosquare.SuperCoreDataDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SuperCoreDataDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		9A04673C1BEA632200AAB351 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SuperCoreDataDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.unosquare.SuperCoreDataDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SuperCoreDataDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 		9A55E1E41BE900EB00915CDC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -389,6 +765,30 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9A04673D1BEA632200AAB351 /* Build configuration list for PBXNativeTarget "SuperCoreDataDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A0467371BEA632200AAB351 /* Debug */,
+				9A0467381BEA632200AAB351 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9A04673E1BEA632200AAB351 /* Build configuration list for PBXNativeTarget "SuperCoreDataDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A0467391BEA632200AAB351 /* Debug */,
+				9A04673A1BEA632200AAB351 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9A04673F1BEA632200AAB351 /* Build configuration list for PBXNativeTarget "SuperCoreDataDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A04673B1BEA632200AAB351 /* Debug */,
+				9A04673C1BEA632200AAB351 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		9A55E1CC1BE900EA00915CDC /* Build configuration list for PBXProject "SuperCoreData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -405,6 +805,7 @@
 				9A55E1E81BE900EB00915CDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A55E1E91BE900EB00915CDC /* Build configuration list for PBXNativeTarget "SuperCoreDataTests" */ = {
 			isa = XCConfigurationList;
@@ -413,8 +814,22 @@
 				9A55E1EB1BE900EB00915CDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9A0467181BEA632200AAB351 /* SuperCoreDataDemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9A0467191BEA632200AAB351 /* SuperCoreDataDemo.xcdatamodel */,
+			);
+			currentVersion = 9A0467191BEA632200AAB351 /* SuperCoreDataDemo.xcdatamodel */;
+			path = SuperCoreDataDemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9A55E1C91BE900EA00915CDC /* Project object */;
 }
