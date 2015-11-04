@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+
 //! Project version number for SuperCoreData.
 FOUNDATION_EXPORT double SuperCoreDataVersionNumber;
 
 //! Project version string for SuperCoreData.
 FOUNDATION_EXPORT const unsigned char SuperCoreDataVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <SuperCoreData/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like
+#import <SuperCoreData/CoreDataHelper.h>
 
 

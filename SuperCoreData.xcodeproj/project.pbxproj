@@ -10,6 +10,10 @@
 		9A55E1D61BE900EA00915CDC /* SuperCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A55E1D51BE900EA00915CDC /* SuperCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A55E1DD1BE900EB00915CDC /* SuperCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A55E1D21BE900EA00915CDC /* SuperCoreData.framework */; };
 		9A55E1E21BE900EB00915CDC /* SuperCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A55E1E11BE900EB00915CDC /* SuperCoreDataTests.m */; };
+		9A55E1ED1BE90A3800915CDC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A55E1EC1BE90A3800915CDC /* CoreData.framework */; };
+		9A55E1F01BE90A7000915CDC /* CoreDataHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A55E1EE1BE90A7000915CDC /* CoreDataHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A55E1F11BE90A7000915CDC /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A55E1EF1BE90A7000915CDC /* CoreDataHelper.m */; };
+		9A55E2301BE9205B00915CDC /* CoreDataHelper.m in Headers */ = {isa = PBXBuildFile; fileRef = 9A55E1EF1BE90A7000915CDC /* CoreDataHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,9 @@
 		9A55E1DC1BE900EB00915CDC /* SuperCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A55E1E11BE900EB00915CDC /* SuperCoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperCoreDataTests.m; sourceTree = "<group>"; };
 		9A55E1E31BE900EB00915CDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A55E1EC1BE90A3800915CDC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9A55E1EE1BE90A7000915CDC /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		9A55E1EF1BE90A7000915CDC /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A55E1ED1BE90A3800915CDC /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +61,7 @@
 		9A55E1C81BE900EA00915CDC = {
 			isa = PBXGroup;
 			children = (
+				9A55E1EC1BE90A3800915CDC /* CoreData.framework */,
 				9A55E1D41BE900EA00915CDC /* SuperCoreData */,
 				9A55E1E01BE900EB00915CDC /* SuperCoreDataTests */,
 				9A55E1D31BE900EA00915CDC /* Products */,
@@ -72,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				9A55E1D51BE900EA00915CDC /* SuperCoreData.h */,
+				9A55E1EE1BE90A7000915CDC /* CoreDataHelper.h */,
+				9A55E1EF1BE90A7000915CDC /* CoreDataHelper.m */,
 				9A55E1D71BE900EA00915CDC /* Info.plist */,
 			);
 			path = SuperCoreData;
@@ -94,6 +105,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A55E1D61BE900EA00915CDC /* SuperCoreData.h in Headers */,
+				9A55E1F01BE90A7000915CDC /* CoreDataHelper.h in Headers */,
+				9A55E2301BE9205B00915CDC /* CoreDataHelper.m in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +121,7 @@
 				9A55E1CE1BE900EA00915CDC /* Frameworks */,
 				9A55E1CF1BE900EA00915CDC /* Headers */,
 				9A55E1D01BE900EA00915CDC /* Resources */,
+				9A55E22F1BE91F6700915CDC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -188,11 +202,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9A55E22F1BE91F6700915CDC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nDEVICE_PATH=\"${OBJROOT}/UninstalledProducts/${TARGET_NAME}.framework\"\nSIMULATOR_PATH=\"${SYMROOT}/../../../../Products/Debug-iphonesimulator/${TARGET_NAME}.framework\"\nARCHIVE_PATH=\"${SRCROOT}/_Archive\"\nif [ \"${CONFIGURATION}\" = \"Release\" ]; then\nif [ -d \"${DEVICE_PATH}\" ]; then\nif [ -d \"${SIMULATOR_PATH}\" ]; then\nrm -rf \"${ARCHIVE_PATH}\"\nmkdir \"${ARCHIVE_PATH}\"\ncp -r \"${DEVICE_PATH}\" \"${ARCHIVE_PATH}\"\nlipo -create \"${DEVICE_PATH}/${TARGET_NAME}\" \"${SIMULATOR_PATH}/${TARGET_NAME}\" -output \"${ARCHIVE_PATH}/${TARGET_NAME}.framework/${TARGET_NAME}\"\nfi\nfi\nfi\nexit 0;\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9A55E1CD1BE900EA00915CDC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A55E1F11BE90A7000915CDC /* CoreDataHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +344,7 @@
 				INFOPLIST_FILE = SuperCoreData/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.unosquare.SuperCoreData;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sankurlabs.SuperCoreData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -329,7 +360,7 @@
 				INFOPLIST_FILE = SuperCoreData/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.unosquare.SuperCoreData;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sankurlabs.SuperCoreData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
