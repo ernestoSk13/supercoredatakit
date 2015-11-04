@@ -27,6 +27,11 @@ the simulator will only work for simulator. Same case with device. This will be 
 general settings. <br>
 · Import the framework in the AppDelegate.h file (#import <SuperCoreData/CoreDataHelper.h>
 
+#Next Features
+
+· Multiple Insertion /Deletion / Updates<br>
+· Universal Framework<br>
+
 
 
 
