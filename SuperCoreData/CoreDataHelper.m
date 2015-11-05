@@ -502,7 +502,7 @@ static CoreDataHelper *_sharedHelper;
     }
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         [_managedObjectContext setPersistentStoreCoordinator: coordinator];
     }
     
@@ -539,7 +539,10 @@ static CoreDataHelper *_sharedHelper;
 - (NSString *)applicationDocumentsDirectory {
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
+#pragma mark - Search methods
 
+
+// Search inside the database for a specific entity. The result returns a single entity object
 - (id)singleInstanceOf:(NSString *)entityName where:(NSString *)condition isEqualTo:(id)value
 {
     NSManagedObjectContext *context = [self managedObjectContext];
@@ -580,6 +583,7 @@ static CoreDataHelper *_sharedHelper;
     return [fetchedObjects count] > 0 ? [fetchedObjects objectAtIndex:0] : nil;
 }
 
+// Search inside the database for a entities that match with conditions provided by the user. The result returns an array of entities
 
 - (NSArray *)allInstancesOf:(NSString *)entityName
                       where:(NSArray *)conditions
@@ -672,6 +676,7 @@ static CoreDataHelper *_sharedHelper;
     return oldInfo;
 }
 
+#pragma mark - Insertion and Update methods
 
 -(void)setNewInstanceFromObjectWithName:(NSString *)objectName usingParams:(NSDictionary *)params withMainIdentifier:(NSString *)primaryKey withSuccess:(SavedContextSuccess)success orError:(SavedContextError)saveError {
     NSString *objectMainId = [params objectForKey:primaryKey];
@@ -701,7 +706,6 @@ static CoreDataHelper *_sharedHelper;
   
 }
 
-
 -(void)updateExistingInstanceFromObjectWithName:(NSString *)objectName usingParams:(NSDictionary *)params withMainIdentifier:(NSString *)primaryKey withSuccess:(SavedContextSuccess)success orError:(SavedContextError)saveError {
      NSString *objectMainId = [params objectForKey:primaryKey];
     NSManagedObject *currentObject = [self singleInstanceOf:objectName where:primaryKey isEqualTo:objectMainId];
@@ -715,13 +719,27 @@ static CoreDataHelper *_sharedHelper;
         }
     }
     NSLog(@"This is the object that should be saved %@", currentObject.description);
-    NSLog(@"This is the object that should be saved %@", currentObject.changedValues);
+    NSLog(@"This are the values that changed %@", currentObject.changedValues);
    
     [self saveContextWithSuccess:^(NSString *successString) {
         success(successString);
     } orError:^(NSString *errorString, NSDictionary *errorDict) {
         saveError(errorString, errorDict);
     }];
+}
+
+-(void)insertObjects:(NSArray *)objects withName:(NSString *)entityName withMainIdentifier:(NSString *)primaryKey withSuccess:(SavedContextSuccess)success orError:(SavedContextError)saveError {
+    NSInteger count = 0;
+    for (NSDictionary *object in objects) {
+        [self setNewInstanceFromObjectWithName:entityName usingParams:object withMainIdentifier:primaryKey withSuccess:^(id successIn) {
+            NSLog(@"Successfully saved object");
+        } orError:^(NSString *errorString, NSDictionary *errorDict) {
+            saveError(errorString, errorDict);
+            return;
+        }];
+        count++;
+    }
+    success([NSString stringWithFormat:@"Successfully inserted %ld objects", count]);
 }
 
 -(NSArray *)savedObjectInstanceFromObjectWithName:(NSString *)objectName OnDatabaseWithConditions:(NSArray *)conditions
@@ -764,7 +782,7 @@ static CoreDataHelper *_sharedHelper;
     success(@"saved successfully");
 }
 
-
+#pragma mark - Delete Methods
 - (void)deleteEntity:(NSManagedObject *)entity
 {
     [self.managedObjectContext deleteObject:entity];
@@ -773,6 +791,20 @@ static CoreDataHelper *_sharedHelper;
     } orError:^(NSString *errorString, NSDictionary *errorDict) {
         NSLog(@"%@", errorString);
     }];
+}
+
+-(void)deleteEntities:(NSArray *)entities
+          withSuccess:(SavedContextSuccess)success
+              orError:(SavedContextError)saveError {
+    NSInteger count = 0;
+    for (NSManagedObject *entity in entities) {
+        if ([entity isKindOfClass:[NSManagedObject class]]){
+            [self deleteEntity:entity];
+        }else {
+            saveError(@"The object you're trying to remove is not a valid Entity", nil);
+        }
+    }
+    success([NSString stringWithFormat:@"Successfully removed %ld objects", count]);
 }
 
 @end

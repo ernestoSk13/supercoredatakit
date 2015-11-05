@@ -40,8 +40,10 @@
     self.txtEmployeeLastName.delegate = self;
     self.txtEmployeePosition.delegate = self;
     [self.btnRegister addTarget:self action:@selector(insertEmployee:) forControlEvents:UIControlEventTouchUpInside];
+    [self.btnDelete addTarget:self action:@selector(deleteEmployee) forControlEvents:UIControlEventTouchUpInside];
 }
 
+#pragma mark - TableView DataSource Methods
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -69,7 +71,7 @@
     
     return cell;
 }
-
+#pragma mark - TableView Delegate Methods
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.selectedEmployee = [self.currentEmployees objectAtIndex:indexPath.row];
     [self.txtEmployeeId setText: self.selectedEmployee.idEmployee];
@@ -80,13 +82,17 @@
     [self.btnRegister setTitle:@"Update" forState:UIControlStateNormal];
 }
 
+
+
 #pragma mark - Super Core Data Methods
 
 -(void)retrieveSavedEmployees {
+    self.selectedEmployee = nil;
     self.currentEmployees = [self.sharedHelper savedObjectInstanceFromObjectWithName:@"Employee" OnDatabaseWithConditions:nil];
     [self.tblEmployees reloadData];
 }
 
+//Insert or update new employee
 -(void)insertEmployee:(UIButton *)sender {
     BOOL isNew = ([sender.currentTitle isEqualToString:@"Register"]) ? YES : NO;
     NSDictionary *employeeDict = [self newEmployee];
@@ -95,6 +101,7 @@
         if (isNew) {
             [self.sharedHelper setNewInstanceFromObjectWithName:@"Employee" usingParams:employeeDict withMainIdentifier:@"idEmployee" withSuccess:^(id success) {
                 NSLog(@"Successfully registered new employee");
+                [weakSelf cleanTextfields];
                 [weakSelf retrieveSavedEmployees];
             } orError:^(NSString *errorString, NSDictionary *errorDict) {
                 NSLog(@"There was an error updating the employee");
@@ -102,6 +109,7 @@
         }else{
             [self.sharedHelper updateExistingInstanceFromObjectWithName:@"Employee" usingParams:employeeDict withMainIdentifier:@"idEmployee" withSuccess:^(id success) {
                  NSLog(@"Successfully updated new employee");
+                [weakSelf cleanTextfields];
                 [weakSelf retrieveSavedEmployees];
             } orError:^(NSString *errorString, NSDictionary *errorDict) {
                  NSLog(@"There was an error updating the employee");
@@ -112,6 +120,16 @@
     }
    
 }
+
+//Erase employee from database
+-(void)deleteEmployee {
+    if (self.selectedEmployee) {
+        [self.sharedHelper deleteEntity:self.selectedEmployee];
+        [self cleanTextfields];
+        [self retrieveSavedEmployees];
+    }
+}
+
 
 -(NSDictionary *)newEmployee {
     if ((self.txtEmployeeId.text.length > 0) &&
@@ -208,6 +226,14 @@
     //return YES;
 }
 
+-(void)cleanTextfields {
+    self.txtEmployeeId.text = @"";
+    self.txtEmployeeName.text = @"";
+    self.txtEmployeeLastName.text = @"";
+    self.txtEmployeePosition.text = @"";
+    [self.btnRegister setTitle:@"Register" forState:UIControlStateNormal];
+    [self.btnDelete setEnabled:NO];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
