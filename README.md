@@ -28,7 +28,7 @@ the simulator will only work for simulator. Same case with device. This will be 
 general settings. <br>
 · Import the framework in the AppDelegate.h file import SuperCoreData/CoreDataHelper.h</p>
 
-<b>Main Methods<b>
+<b>Main Methods</b>
 <p>
 // Search inside the database for a specific entity. The result returns a single entity object <br>
 - (id)singleInstanceOf:(NSString *)entityName
