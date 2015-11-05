@@ -19,17 +19,16 @@ of how the framework's helper instance is just called once and it's setted up in
 (See AppDelegate.m inside the project for details)</p>
 
 #Installing the framework in your project
-· Open the xcode project named SuperCoreData <br>
+<p>· Open the xcode project named SuperCoreData <br>
 · Once you are inside be sure to select the SuperCoreData framework and build it.<br>
 · On the project folders look for the one named "Products", right click it and select "Show in Finder"<br>
 · Notice that there will be a file with a ".framework" suffix. (<b>Important:</b> If you build for a simulator, 
 the simulator will only work for simulator. Same case with device. This will be fixes in the next version).<br>
 · Drag the <b>SuperCoreData.framework</b> file to your project and add it to the Embedded Binaries on the project's
 general settings. <br>
-· Import the framework in the AppDelegate.h file (#import <SuperCoreData/CoreDataHelper.h>
+· Import the framework in the AppDelegate.h file (#import <SuperCoreData/CoreDataHelper.h>)</p>
 
-#Main methods
-
+Main methods
 <p>
 // Search inside the database for a specific entity. The result returns a single entity object <br>
 - (id)singleInstanceOf:(NSString *)entityName
