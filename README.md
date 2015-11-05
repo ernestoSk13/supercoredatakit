@@ -60,7 +60,7 @@ general settings. <br>
              orError:(SavedContextError)saveError;<br><br>
 //Remove a single instance of an existing entity<br>
 - (void)deleteEntity:(NSManagedObject *)entity;<br><br>
-//Remove multiple instances. The method receives an NSManagedObject Array. 
+//Remove multiple instances. The method receives an NSManagedObject Array.<br>
 - (void)deleteEntities:(NSArray *)entities
           withSuccess:(SavedContextSuccess)success
               orError:(SavedContextError)saveError;
